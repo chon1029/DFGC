@@ -4,12 +4,12 @@ import { contentData } from "@/lib/data/contentData";
 
 export default function SermonsPage() {
   const allSermons = [
-    { title: "성령의 능력을 경험하라", preacher: "김동두천", date: "2024.02.04" },
-    { title: "말씀의 능력", preacher: "김동두천", date: "2024.01.28" },
-    { title: "기도의 힘", preacher: "김동두천", date: "2024.01.21" },
-    { title: "사랑의 공동체", preacher: "김동두천", date: "2024.01.14" },
-    { title: "믿음으로 승리하라", preacher: "김동두천", date: "2024.01.07" },
-    { title: "새 일을 행하시는 하나님", preacher: "김동두천", date: "2023.12.31" },
+    { title: "성령의 능력을 경험하라", preacher: "김석주", date: "2024.02.04" },
+    { title: "말씀의 능력", preacher: "김석주", date: "2024.01.28" },
+    { title: "기도의 힘", preacher: "김석주", date: "2024.01.21" },
+    { title: "사랑의 공동체", preacher: "김석주", date: "2024.01.14" },
+    { title: "믿음으로 승리하라", preacher: "김석주", date: "2024.01.07" },
+    { title: "새 일을 행하시는 하나님", preacher: "김석주", date: "2023.12.31" },
   ];
 
   return (

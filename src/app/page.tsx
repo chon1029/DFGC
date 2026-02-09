@@ -3,8 +3,15 @@
 import { motion } from "framer-motion";
 import { HeroParallax } from "@/components/hero-parallax";
 import { contentData } from "@/lib/data/contentData";
+import Link from "next/link";
+import { useState } from "react";
+import { OfferingModal } from "@/components/offering-modal";
+import { WeeklyPreviewModal } from "@/components/weekly-preview-modal";
 
 export default function Home() {
+  const [isOfferingModalOpen, setIsOfferingModalOpen] = useState(false);
+  const [isWeeklyModalOpen, setIsWeeklyModalOpen] = useState(false);
+
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section with Parallax Effect */}
@@ -28,21 +35,66 @@ export default function Home() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-            {contentData.quickLinks.map((link) => (
-              <div
-                key={link.title}
-                className="group p-12 bg-white rounded-[2.5rem] shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_80px_rgba(139,0,0,0.1)] transition-all duration-500 border border-gray-50 hover:-translate-y-4"
-              >
-                <div className="w-20 h-20 bg-gray-50 group-hover:bg-royal-red rounded-3xl flex items-center justify-center mx-auto mb-8 transition-colors duration-500">
-                  <span className="text-3xl text-royal-red group-hover:text-white transition-colors duration-500">✨</span>
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 tracking-tight group-hover:text-royal-red transition-colors">{link.title}</h3>
-                <p className="text-gray-500 leading-relaxed font-medium">{link.description}</p>
-              </div>
-            ))}
+            {contentData.quickLinks.map((link) => {
+              if (link.title === "온라인헌금") {
+                return (
+                  <button
+                    key={link.title}
+                    onClick={() => setIsOfferingModalOpen(true)}
+                    className="group p-12 bg-white rounded-[2.5rem] shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_80px_rgba(139,0,0,0.1)] transition-all duration-500 border border-gray-50 hover:-translate-y-4 block text-left w-full cursor-pointer"
+                  >
+                    <div className="w-20 h-20 bg-gray-50 group-hover:bg-royal-red rounded-3xl flex items-center justify-center mx-auto mb-8 transition-colors duration-500">
+                      <span className="text-3xl text-royal-red group-hover:text-white transition-colors duration-500">✨</span>
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 tracking-tight group-hover:text-royal-red transition-colors">{link.title}</h3>
+                    <p className="text-gray-500 leading-relaxed font-medium">{link.description}</p>
+                  </button>
+                );
+              }
+
+              if (link.title === "교회주보") {
+                return (
+                  <button
+                    key={link.title}
+                    onClick={() => setIsWeeklyModalOpen(true)}
+                    className="group p-12 bg-white rounded-[2.5rem] shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_80px_rgba(139,0,0,0.1)] transition-all duration-500 border border-gray-50 hover:-translate-y-4 block text-left w-full cursor-pointer"
+                  >
+                    <div className="w-20 h-20 bg-gray-50 group-hover:bg-sky-500 rounded-3xl flex items-center justify-center mx-auto mb-8 transition-colors duration-500">
+                      <span className="text-3xl text-royal-red group-hover:text-white transition-colors duration-500">📄</span>
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 tracking-tight group-hover:text-sky-500 transition-colors">{link.title}</h3>
+                    <p className="text-gray-500 leading-relaxed font-medium">{link.description}</p>
+                  </button>
+                );
+              }
+
+              return (
+                <Link
+                  key={link.title}
+                  href={link.href}
+                  className="group p-12 bg-white rounded-[2.5rem] shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_80px_rgba(139,0,0,0.1)] transition-all duration-500 border border-gray-50 hover:-translate-y-4 block"
+                >
+                  <div className="w-20 h-20 bg-gray-50 group-hover:bg-royal-red rounded-3xl flex items-center justify-center mx-auto mb-8 transition-colors duration-500">
+                    <span className="text-3xl text-royal-red group-hover:text-white transition-colors duration-500">✨</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 tracking-tight group-hover:text-royal-red transition-colors">{link.title}</h3>
+                  <p className="text-gray-500 leading-relaxed font-medium">{link.description}</p>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
+
+      <OfferingModal
+        isOpen={isOfferingModalOpen}
+        onClose={() => setIsOfferingModalOpen(false)}
+      />
+
+      <WeeklyPreviewModal
+        isOpen={isWeeklyModalOpen}
+        onClose={() => setIsWeeklyModalOpen(false)}
+      />
 
       {/* Latest Sermon Preview */}
       <section className="py-32 bg-gray-900 text-white overflow-hidden">

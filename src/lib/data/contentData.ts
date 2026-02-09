@@ -6,11 +6,23 @@
 export const contentData = {
     churchName: "동두천순복음교회",
     motto: "성령의 불길로 세상을 밝히는 교회",
-    vision: "Vision 2026 - 다음 세대와 함께하는 교회",
+    vision: "온가족교회 칠십가정구원 일백명예배자",
 
     colors: {
         primary: "#8B0000", // 로열 레드
         secondary: "#D4AF37", // 골드
+    },
+
+    offering: {
+        bank: "우체국",
+        accountNumber: "100834-01-004906",
+        accountHolder: "동두천순복음교회",
+        types: ["십일조", "감사헌금", "주일헌금", "선교예금"],
+    },
+
+    weeklyBulletin: {
+        currentDate: "2024년 2월 11일",
+        imageUrl: "/assets/designs/bulletin_placeholder.jpg", // 추후 실제 이미지로 교체
     },
 
     navigation: [
@@ -30,29 +42,30 @@ export const contentData = {
     },
 
     quickLinks: [
-        { title: "예배안내", icon: "Clock", description: "주일 및 평일 예배 시간" },
-        { title: "온라인헌금", icon: "CreditCard", description: "정성스러운 봉헌 안내" },
-        { title: "교회주보", icon: "FileText", description: "이번 주 소식과 기도제목" },
-        { title: "새가족등록", icon: "UserPlus", description: "교회의 가족이 되어주세요" },
+        { title: "예배안내", icon: "Clock", description: "주일 및 평일 예배 시간", href: "/sermons" },
+        { title: "온라인헌금", icon: "CreditCard", description: "정성스러운 봉헌 안내", href: "/offering" },
+        { title: "교회주보", icon: "FileText", description: "이번 주 소식과 기도제목", href: "/news" },
+        { title: "새가족등록", icon: "UserPlus", description: "교회의 가족이 되어주세요", href: "/new-family" },
     ],
 
     sermons: {
         title: "최신 설교 말씀",
         mainSermon: {
             title: "성령의 능력을 경험하라",
-            preacher: "김동두천 담임목사",
+            preacher: "김석주 담임목사",
+
             date: "2024.02.04",
             thumbnail: "/assets/designs/sermon_thumb_01.jpg",
         },
         recentList: [
-            { title: "말씀의 능력", preacher: "김동두천 목사", date: "2024.01.28" },
-            { title: "기도의 힘", preacher: "김동두천 목사", date: "2024.01.21" },
-            { title: "사랑의 공동체", preacher: "김동두천 목사", date: "2024.01.14" },
+            { title: "말씀의 능력", preacher: "김석주 목사", date: "2024.01.28" },
+            { title: "기도의 힘", preacher: "김석주 목사", date: "2024.01.21" },
+            { title: "사랑의 공동체", preacher: "김석주 목사", date: "2024.01.14" },
         ]
     },
 
     footer: {
-        address: "경기도 동두천시 교회로 123 (지행동)",
+        address: "경기도 동두천시 동두천로 340-9",
         phone: "031-123-4567",
         email: "dongducheon@church.org",
         notice: "본 교회는 신천지 등 이단 사이비의 출입을 엄격히 금합니다.",

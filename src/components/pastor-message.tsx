@@ -56,7 +56,7 @@ export const PastorMessage = () => {
                         <div className="mt-12 pt-10 border-t border-gray-100 flex items-end justify-between">
                             <div>
                                 <p className="text-gray-400 text-sm mb-1 uppercase tracking-widest font-bold">Senior Pastor</p>
-                                <p className="text-3xl font-black text-gray-900">김동두천 <span className="text-xl font-bold text-gray-400">담임목사</span></p>
+                                <p className="text-3xl font-black text-gray-900">김석주 <span className="text-xl font-bold text-gray-400">담임목사</span></p>
                             </div>
                             <div className="h-16 w-32 border-b-2 border-gray-200" /> {/* Signature space */}
                         </div>
