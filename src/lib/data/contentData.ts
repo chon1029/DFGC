@@ -66,7 +66,7 @@ export const contentData = {
 
     footer: {
         address: "경기도 동두천시 동두천로 340-9",
-        phone: "031-123-4567",
+        phone: "010-9270-6520",
         email: "dongducheon@church.org",
         notice: "본 교회는 신천지 등 이단 사이비의 출입을 엄격히 금합니다.",
         copyright: "© 2024 DONGDUCHEON FULL GOSPEL CHURCH. All rights reserved.",
