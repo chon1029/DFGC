@@ -43,10 +43,10 @@ export const contentData = {
     },
 
     quickLinks: [
-        { title: "예배안내", icon: "Clock", description: "주일 및 평일 예배 시간", href: "/sermons" },
-        { title: "온라인헌금", icon: "CreditCard", description: "정성스러운 봉헌 안내", href: "/offering" },
-        { title: "교회주보", icon: "FileText", description: "이번 주 소식과 기도제목", href: "/news" },
-        { title: "새가족등록", icon: "UserPlus", description: "교회의 가족이 되어주세요", href: "/new-family" },
+        { title: "주일예배", icon: "Clock", description: "SERMON", href: "/sermons", image: "https://images.unsplash.com/photo-1548625361-96a9781406bc?auto=format&fit=crop&q=80" },
+        { title: "예배시간", icon: "Clock", description: "WORSHIP", href: "/sermons", image: "https://images.unsplash.com/photo-1445963846434-72541bc43a73?auto=format&fit=crop&q=80" },
+        { title: "교회소식", icon: "FileText", description: "NEWS", href: "/news", image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&q=80" },
+        { title: "오시는길", icon: "MapPin", description: "LOCATION", href: "/directions", image: "https://images.unsplash.com/photo-1526772662000-3f88f10c05fe?auto=format&fit=crop&q=80" },
     ],
 
     sermons: {

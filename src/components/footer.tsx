@@ -13,7 +13,7 @@ export const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-16">
                     {/* Church Info */}
                     <div className="md:col-span-1">
-                        <h2 className="text-2xl font-bold tracking-tighter text-gold mb-6">
+                        <h2 className="text-2xl font-bold tracking-tighter text-gold mb-6 font-serif">
                             {contentData.churchName}
                         </h2>
                         <p className="text-white/60 leading-relaxed mb-8">

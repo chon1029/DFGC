@@ -23,35 +23,63 @@ export const Navbar = () => {
         <nav
             className={cn(
                 "fixed top-0 w-full z-50 transition-all duration-500",
-                scrolled ? "bg-white/95 backdrop-blur-xl py-3 shadow-xl border-b border-gray-100" : "bg-transparent py-6"
+                scrolled ? "bg-white/95 backdrop-blur-xl shadow-md border-b border-gray-100" : "bg-transparent"
             )}
         >
-            <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            {/* Top Utility Bar */}
+            <div className={cn(
+                "hidden md:block w-full py-2 border-b transition-all duration-500",
+                scrolled ? "bg-gray-50/50 border-gray-100" : "bg-black/10 border-white/10"
+            )}>
+                <div className="max-w-7xl mx-auto px-6 flex justify-end items-center space-x-6">
+                    <div className={cn(
+                        "flex items-center space-x-4 text-[11px] font-bold tracking-tight uppercase transition-colors",
+                        scrolled ? "text-gray-500" : "text-white/60"
+                    )}>
+                        <Link href="/login" className="hover:text-primarytransition-colors flex items-center space-x-1">
+                            <span>로그인</span>
+                        </Link>
+                        <span className="w-px h-2 bg-current opacity-20" />
+                        <Link href="/signup" className="hover:text-primary transition-colors flex items-center space-x-1">
+                            <span>회원가입</span>
+                        </Link>
+                        <span className="w-px h-2 bg-current opacity-20" />
+                        <Link href="/sitemap" className="hover:text-primary transition-colors flex items-center space-x-1">
+                            <span>사이트맵</span>
+                        </Link>
+                    </div>
+                </div>
+            </div>
+
+            <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
                 {/* Logo */}
-                <Link href="/" className="flex items-center space-x-2">
+                <Link href="/" className="flex items-center space-x-3 group">
                     {contentData.logoUrl ? (
-                        <div className="relative h-10 md:h-12 w-auto">
+                        <div className="relative h-10 md:h-12 w-auto flex items-center">
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
                                 src={contentData.logoUrl}
                                 alt={contentData.churchName}
-                                className="h-full w-auto object-contain transition-all"
+                                className={cn(
+                                    "h-full w-auto object-contain transition-all duration-500",
+                                    !scrolled && "brightness-0 invert opacity-90"
+                                )}
                                 onError={(e) => {
                                     (e.currentTarget as HTMLImageElement).style.display = 'none';
                                     (e.currentTarget.nextElementSibling as HTMLElement).style.display = 'block';
                                 }}
                             />
                             <span className={cn(
-                                "text-2xl font-bold tracking-tighter transition-colors hidden",
-                                scrolled ? "text-royal-red" : "text-white"
+                                "text-2xl font-bold tracking-tighter transition-colors hidden font-serif ml-3",
+                                scrolled ? "text-primary" : "text-white"
                             )}>
                                 {contentData.churchName}
                             </span>
                         </div>
                     ) : (
                         <span className={cn(
-                            "text-2xl font-bold tracking-tighter transition-colors",
-                            scrolled ? "text-royal-red" : "text-white"
+                            "text-2xl font-bold tracking-tighter transition-colors font-serif",
+                            scrolled ? "text-primary" : "text-white"
                         )}>
                             {contentData.churchName}
                         </span>
@@ -65,28 +93,32 @@ export const Navbar = () => {
                             key={item.name}
                             href={item.href}
                             className={cn(
-                                "text-base font-bold transition-colors hover:text-royal-red",
-                                scrolled ? "text-gray-800" : "text-white"
+                                "text-[15px] font-bold transition-all hover:text-primary relative group/nav",
+                                scrolled ? "text-gray-700" : "text-white"
                             )}
                         >
                             {item.name}
+                            <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-primary transition-all group-hover/nav:w-full" />
                         </Link>
                     ))}
-                    <button className="bg-royal-red text-white px-6 py-2.5 rounded-full text-base font-bold hover:bg-red-900 transition-all shadow-xl hover:scale-105 active:scale-95">
+                    <button className={cn(
+                        "px-6 py-2 rounded-full text-[14px] font-bold transition-all shadow-sm hover:scale-105 active:scale-95",
+                        scrolled ? "bg-primary text-white hover:bg-primary/90" : "bg-white/20 text-white backdrop-blur-md hover:bg-white/30 border border-white/30"
+                    )}>
                         온라인 예배
                     </button>
                 </div>
 
                 {/* Mobile Toggle */}
-                <div className="md:hidden relative z-[60]">
+                <div className="md:hidden">
                     <button
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                         className={cn(
-                            "transition-colors duration-300",
-                            mobileMenuOpen ? "text-gray-900" : (scrolled ? "text-gray-900" : "text-white")
+                            "p-2 rounded-lg transition-colors duration-300",
+                            mobileMenuOpen ? "text-gray-900 bg-gray-100" : (scrolled ? "text-gray-900" : "text-white bg-white/10")
                         )}
                     >
-                        {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+                        {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>
                 </div>
             </div>

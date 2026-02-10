@@ -48,8 +48,8 @@ export const HeroParallax = () => {
                 </div>
             </motion.div>
 
-            {/* Overlay Background for Content */}
-            <div className="absolute inset-0 bg-black/40 z-10" />
+            {/* Overlay Background for Content - Warm Tint */}
+            <div className="absolute inset-0 bg-[#3d342d]/40 z-10" />
 
             {/* Background Media Placeholder */}
             <div
@@ -75,7 +75,7 @@ const Header = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-[34px] md:text-[80px] font-black text-white tracking-tighter leading-none"
+                className="text-[34px] md:text-[80px] font-black text-white tracking-tighter leading-none font-serif"
             >
                 {contentData.hero.title} <br />
                 <span className="text-gold">{contentData.hero.highlight}</span>
@@ -112,7 +112,7 @@ const ProductCard = () => {
                 <div className="h-48 w-full bg-gradient-to-br from-royal-red/20 to-gold/20 rounded-2xl mb-4 flex items-center justify-center">
                     <span className="text-4xl text-white/20 font-bold">D.F.G.C</span>
                 </div>
-                <h2 className="text-xl font-bold text-white tracking-tight">영적인 깊이가 있는 교회</h2>
+                <h2 className="text-xl font-bold text-white tracking-tight font-serif">영적인 깊이가 있는 교회</h2>
                 <div className="w-10 h-1 bg-gold mt-2 rounded-full" />
             </div>
         </motion.div>
