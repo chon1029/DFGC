@@ -5,7 +5,8 @@
 
 export const contentData = {
     churchName: "동두천순복음교회",
-    motto: "성령의 불길로 세상을 밝히는 교회",
+    logoUrl: "/assets/designs/교회로고-수정-removebg-preview.png", // 여기에 교회 로고 이미지 경로를 넣으세요.
+    mission: "말씀기도생활 * 성령충만한삶 * 예수님만자랑",
     vision: "온가족교회 칠십가정구원 일백명예배자",
 
     colors: {
@@ -34,7 +35,7 @@ export const contentData = {
     ],
 
     hero: {
-        title: "성령의 불길로 세상을 밝히는",
+        title: "온가족이 예수믿는 교회",
         highlight: "동두천순복음교회",
         subTitle: "다음 세대와 함께 하나님 나라를 세워가는 공동체입니다.",
         cta: "예배 안내 보기",
@@ -67,7 +68,7 @@ export const contentData = {
     footer: {
         address: "경기도 동두천시 동두천로 340-9",
         phone: "010-9270-6520",
-        email: "dongducheon@church.org",
+        email: "cha7570@gmail.com",
         notice: "본 교회는 신천지 등 이단 사이비의 출입을 엄격히 금합니다.",
         copyright: "© 2024 DONGDUCHEON FULL GOSPEL CHURCH. All rights reserved.",
     }

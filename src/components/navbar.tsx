@@ -29,12 +29,33 @@ export const Navbar = () => {
             <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
                 {/* Logo */}
                 <Link href="/" className="flex items-center space-x-2">
-                    <span className={cn(
-                        "text-2xl font-bold tracking-tighter transition-colors",
-                        scrolled ? "text-royal-red" : "text-white"
-                    )}>
-                        {contentData.churchName}
-                    </span>
+                    {contentData.logoUrl ? (
+                        <div className="relative h-10 md:h-12 w-auto">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                                src={contentData.logoUrl}
+                                alt={contentData.churchName}
+                                className="h-full w-auto object-contain transition-all"
+                                onError={(e) => {
+                                    (e.currentTarget as HTMLImageElement).style.display = 'none';
+                                    (e.currentTarget.nextElementSibling as HTMLElement).style.display = 'block';
+                                }}
+                            />
+                            <span className={cn(
+                                "text-2xl font-bold tracking-tighter transition-colors hidden",
+                                scrolled ? "text-royal-red" : "text-white"
+                            )}>
+                                {contentData.churchName}
+                            </span>
+                        </div>
+                    ) : (
+                        <span className={cn(
+                            "text-2xl font-bold tracking-tighter transition-colors",
+                            scrolled ? "text-royal-red" : "text-white"
+                        )}>
+                            {contentData.churchName}
+                        </span>
+                    )}
                 </Link>
 
                 {/* Desktop Menu */}
@@ -91,9 +112,27 @@ export const Navbar = () => {
                             className="fixed top-0 left-0 h-screen w-[85%] max-w-[400px] bg-white z-[58] md:hidden shadow-[20px_0_60px_rgba(0,0,0,0.1)] flex flex-col p-10"
                         >
                             <div className="mb-12">
-                                <span className="text-2xl font-black text-royal-red tracking-tighter">
-                                    {contentData.churchName}
-                                </span>
+                                {contentData.logoUrl ? (
+                                    <div className="h-10 w-auto">
+                                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                                        <img
+                                            src={contentData.logoUrl}
+                                            alt={contentData.churchName}
+                                            className="h-full w-auto object-contain"
+                                            onError={(e) => {
+                                                (e.currentTarget as HTMLImageElement).style.display = 'none';
+                                                (e.currentTarget.nextElementSibling as HTMLElement).style.display = 'block';
+                                            }}
+                                        />
+                                        <span className="text-2xl font-black text-royal-red tracking-tighter hidden">
+                                            {contentData.churchName}
+                                        </span>
+                                    </div>
+                                ) : (
+                                    <span className="text-2xl font-black text-royal-red tracking-tighter">
+                                        {contentData.churchName}
+                                    </span>
+                                )}
                             </div>
 
                             <div className="flex flex-col space-y-8 flex-grow">

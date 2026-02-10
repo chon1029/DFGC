@@ -29,7 +29,7 @@ export default function Home() {
             className="mb-20"
           >
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 tracking-tight">
-              {contentData.motto}
+              {contentData.mission}
             </h2>
             <div className="w-24 h-2 bg-royal-red mx-auto rounded-full" />
           </motion.div>
